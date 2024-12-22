@@ -23,6 +23,10 @@ async function migrations(req, res) {
       migrationsTable: "pgmigrations",
     });
 
+    if (migrations.length > 0) {
+      return res.status(201).json(migrations);
+    }
+
     res.status(200).json(migrations);
   }
 
