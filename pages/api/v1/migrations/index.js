@@ -4,6 +4,12 @@ import { join } from "node:path";
 import database from "infra/database";
 
 async function migrations(req, res) {
+
+  const AllowedMethods = ["GET", "POST"];
+  if (!AllowedMethods.includes(req.method)) {
+    return res.status(405).end();
+  }
+
   if (req.method === "GET") {
     const dbClient = await database.getNewClient();
 
