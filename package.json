@@ -12,12 +12,13 @@
     "services:down": "docker compose -f infra/compose.yaml down -d",
     "services:wait:database": "node infra/scripts/wait-for-postgres.js",
     "lint:prettier:check": "prettier --check .",
+    "lint:prettier:fix": "prettier --write .",
     "lint:fix": "prettier --write .",
     "lint:eslint:check": "next lint --dir .",
     "migration:create": "node-pg-migrate -m infra/migrations create",
     "migrations:up": "node-pg-migrate -m infra/migrations --envPath .env.development up",
     "prepare": "husky",
-    "commit":"cz"
+    "commit": "cz"
   },
   "author": "",
   "license": "MIT",
