@@ -1,4 +1,3 @@
-import database from "infra/database.js";
 import { check_database } from "infra/services_status.js";
 
 async function status(req, res) {
